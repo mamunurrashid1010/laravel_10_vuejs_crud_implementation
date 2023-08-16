@@ -29,7 +29,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = Category::query()->create($request->post());
+        return response()->json([
+            'message'=>'Category Created Successfully!!',
+            'category'=>$category
+        ]);
     }
 
     /**
