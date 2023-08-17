@@ -41,7 +41,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return response()->json($category);
     }
 
     /**
@@ -57,7 +57,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->fill($request->post())->save();
+        return response()->json([
+            'message'=>'Category Updated Successfully!!',
+            'category'=>$category
+        ]);
     }
 
     /**
