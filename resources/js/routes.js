@@ -1,5 +1,6 @@
 const Welcome = () => import('./components/Welcome.vue' /* webpackChunkName: "resource/js/components/welcome" */)
 const CategoryList = () => import('./components/category/List.vue' /* webpackChunkName: "resource/js/components/category/list" */)
+const CategoryCreate = () => import('./components/category/Add.vue' /* webpackChunkName: "resource/js/components/category/add" */)
 
 export const routes = [
     {
@@ -12,5 +13,10 @@ export const routes = [
         path: '/category',
         component: CategoryList
     },
+    {
+        name: 'categoryAdd',
+        path: '/category/add',
+        component: CategoryCreate
+    }
 
 ]
